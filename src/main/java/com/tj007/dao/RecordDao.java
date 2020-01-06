@@ -5,6 +5,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
+import com.tj007.model.Record;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 
@@ -13,7 +14,7 @@ import java.util.Hashtable;
 public class RecordDao extends BaseDao {
     public MongoCollection<Document> collection = mongoDatabase.getCollection("record");
 
-    public void getNewRecord( String user_id, String url, String id, String value, String date){
+    public Document getNewRecord( String user_id, String url, String id, String value, String date){
 
         Document document = new Document();
         document.put("user_id", user_id);
@@ -25,7 +26,7 @@ public class RecordDao extends BaseDao {
 
         collection.insertOne(document);
 
-        sendNewRecord(user_id);
+        return sendNewRecord(user_id);
     }
 
     public Document sendNewRecord(String user_id){
@@ -35,6 +36,8 @@ public class RecordDao extends BaseDao {
         Document document = find.first();
         return document;
     }
+
+
 
 
 

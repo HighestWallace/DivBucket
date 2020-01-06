@@ -36,4 +36,24 @@ public class User {
     public String getWork() {
         return work;
     }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public void setPsw(String psw) {
+        this.psw = psw;
+    }
+
+    public void setBinding_email(String binding_email) {
+        this.binding_email = binding_email;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
 }
