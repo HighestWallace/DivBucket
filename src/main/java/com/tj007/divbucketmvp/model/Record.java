@@ -1,6 +1,5 @@
-package com.tj007.model;
+package com.tj007.divbucketmvp.model;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Record {

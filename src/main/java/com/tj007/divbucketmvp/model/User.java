@@ -1,7 +1,6 @@
-package com.tj007.model;
+package com.tj007.divbucketmvp.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.bson.Document;
 
 //@Document（collection="user"）
 public class User {

@@ -1,16 +1,13 @@
-package com.tj007.dao;
+package com.tj007.divbucketmvp.dao;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.DBCursor;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Filters;
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.springframework.data.mongodb.core.query.Criteria;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ManagerDao extends BaseDao {

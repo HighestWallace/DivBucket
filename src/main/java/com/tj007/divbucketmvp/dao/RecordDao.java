@@ -1,15 +1,9 @@
-package com.tj007.dao;
+package com.tj007.divbucketmvp.dao;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import com.mongodb.client.model.Filters;
-import com.tj007.model.Record;
 import org.bson.Document;
-import org.bson.conversions.Bson;
-
-import java.util.Hashtable;
 
 public class RecordDao extends BaseDao {
     public MongoCollection<Document> collection = mongoDatabase.getCollection("record");

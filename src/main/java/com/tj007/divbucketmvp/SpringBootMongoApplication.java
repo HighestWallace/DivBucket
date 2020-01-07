@@ -1,19 +1,7 @@
-package com.tj007;
+package com.tj007.divbucketmvp;
 
-import com.mongodb.MongoClient;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoCursor;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
-import com.tj007.dao.UserDao;
-import com.tj007.model.User;
-import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.ArrayList;
 
 @SpringBootApplication
 public class SpringBootMongoApplication {

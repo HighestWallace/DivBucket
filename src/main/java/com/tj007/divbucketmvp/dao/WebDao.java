@@ -1,4 +1,4 @@
-package com.tj007.dao;
+package com.tj007.divbucketmvp.dao;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
@@ -48,7 +48,7 @@ public class WebDao extends BaseDao {
     }
 
     public Document addWebMonitor(
-            String user_id, String url, String remark, String cookie, ArrayList<String> label,
+            String user_id, String url, String remark, String cookie, ArrayList<String> tag,
             ArrayList<String> path, boolean isActive){
 
         String result = "success";
@@ -60,7 +60,7 @@ public class WebDao extends BaseDao {
         document.put("url", url);
         document.put("remark", remark);
         document.put("cookie", cookie);
-        document.put("label", label);
+        document.put("tag", tag);
         document.put("path", path);
         document.put("isActive", isActive);
 

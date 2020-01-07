@@ -1,7 +1,7 @@
-package com.tj007.controller;
+package com.tj007.divbucketmvp.controller;
 
-import com.tj007.dao.WebDao;
-import com.tj007.model.WebMonitor;
+import com.tj007.divbucketmvp.dao.WebDao;
+import com.tj007.divbucketmvp.model.WebMonitor;
 import org.bson.Document;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

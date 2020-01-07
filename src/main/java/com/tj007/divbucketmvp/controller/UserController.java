@@ -1,6 +1,6 @@
-package com.tj007.controller;
-import com.tj007.dao.UserDao;
-import com.tj007.model.User;
+package com.tj007.divbucketmvp.controller;
+import com.tj007.divbucketmvp.dao.UserDao;
+import com.tj007.divbucketmvp.model.User;
 import org.bson.Document;
 import org.springframework.web.bind.annotation.*;
 
