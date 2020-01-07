@@ -1,8 +1,10 @@
 package com.tj007.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Record {
+
     @Field("user_id")
     private String user_id;
 
@@ -38,6 +40,7 @@ public class Record {
         this.value = value;
     }
 
+
     public String getUser_id() {
         return user_id;
     }
@@ -57,4 +60,5 @@ public class Record {
     public String getValue() {
         return value;
     }
+
 }

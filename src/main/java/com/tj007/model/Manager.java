@@ -8,19 +8,21 @@ public class Manager {
     @Field("psw")
     private String psw;
 
-    public String getPsw() {
-        return psw;
+    public void setPsw(String psw) {
+        this.psw = psw;
     }
 
     public String getManager_id() {
         return manager_id;
     }
 
-    public void setPsw(String psw) {
-        this.psw = psw;
+    public String getPsw() {
+        return psw;
     }
 
     public void setManager_id(String manager_id) {
         this.manager_id = manager_id;
     }
+
+    
 }

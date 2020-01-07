@@ -83,23 +83,26 @@ public class ManagerDao extends BaseDao {
         }
     }
 
-    public Document getLabel(){
+    public Document getTag(){
 
         MongoCollection<Document> web_collection = mongoDatabase.getCollection("web_monitor");
         FindIterable<Document> findWeb = web_collection.find();
-
+        MongoCursor<Document> mongoCursor = findWeb.iterator();
         Document count = new Document();
+        if(mongoCursor.hasNext()){
+            for(Document document: findWeb){
 
-        for(Document document: findWeb){
+                for(String tag : (ArrayList<String>)document.get("tag")){
+                    if (count.get(tag) == null)
+                        count.put(tag, 1);
+                    else count.put(tag, (int)count.get(tag)+1);
 
-            for(String tag : (ArrayList<String>)document.get("tag")){
-                if (count.get(tag) == null)
-                    count.put(tag, 1);
-                else count.put(tag, (int)count.get(tag)+1);
-
+                }
             }
+            //
+            return count;
         }
-        //
-        return count;
+        else return new Document("tag", 0);
+
     }
 }

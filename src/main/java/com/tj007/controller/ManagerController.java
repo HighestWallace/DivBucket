@@ -25,10 +25,10 @@ public class ManagerController {
         return managerDao.getUserInfo(user.getUser_id());
     }
 
-    @RequestMapping(value = "/getLabel")
-    public Document getLabel(){
+    @RequestMapping(value = "/getTag")
+    public Document getTag(){
         ManagerDao managerDao = new ManagerDao();
-        
-        return managerDao.getLabel();
+
+        return managerDao.getTag();
     }
 }
