@@ -10,13 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/record")
 public class RecordController {
-    @RequestMapping(value = "/getnewrecord")
+    @RequestMapping(value = "/getNewRecord")
     public Document login(@RequestBody Record record){
         RecordDao recordDao = new RecordDao();
 
         return recordDao.getNewRecord(
                 record.getUser_id(), record.getUrl(), record.getId(), record.getValue(), record.getDate());
-
-
     }
 }
