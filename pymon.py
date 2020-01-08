@@ -49,11 +49,12 @@ for x in user.find():
     #y.append(x)    
     #user_tag.append([x["user_id"], tran_web_tag[i]])
     user_tag.update({x["user_id"]:tran_web_tag[i]})
-#print (user_tag)    
+#print (user_tag)
 
-for i in web_tag:
-    i[0] = user_tag[i[0]]
-print (web_tag)
+#尝试不管工作了
+# for i in web_tag:
+#     i[0] = user_tag[i[0]]
+# print (web_tag)
 
 def InitStat_update(records):
     user_tags = dict()  # 用户打过标签的次数
@@ -93,11 +94,23 @@ def Recommend(user, K):
 
     rec = sorted(recommend_items.items(),key = lambda x:x[1],reverse = True)   # 将推荐网站按兴趣度排名
     print("用户对网站兴趣度: ", rec)
+    user_count = []
+    for x in web.find():
+        if (x["user_id"] == user):
+            user_count.append(x["url"])
+    recommend_web = rec[0][0]
+    for i in range(len(rec)):
+        if (rec[i][0] not in user_count):
+            recommend_web = rec[i][0]
+            return recommend_web
+    return "fail"
+
+
     # recommend_web = ()
     # for i in range(K):
     #     recommend_web.append(rec[i][0])
     #recommend_web = "/".join(recommend_web)
-    recommend_web = rec[0][0]
+    #recommend_web = rec[0][0]
     print("为用户推荐网站: ", recommend_web)
     return recommend_web
 
@@ -106,10 +119,10 @@ def Recommend(user, K):
 @app.route('/user/recommend', methods =['GET', 'POST'])
 def rec():
     work = request.get_json() ['user_id']
-    if isinstance(work,str):
-        return Recommend(tran_work_tag[work],1)
+    # if isinstance(work,str):
+    #     return Recommend(tran_work_tag[work],1)
     return Recommend(work, 1)
 
-#print( Recommend(1, 1))
+print( Recommend("4@test.com", 1))
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
